@@ -17,6 +17,8 @@ public class Gabun_program {
         
         System.out.println("Renz Gabun");
         
+        System.out.println("ACT2C_PROGRAM");
+        
         System.out.println("Enter a number:");
         
         int x = input.nextInt();
