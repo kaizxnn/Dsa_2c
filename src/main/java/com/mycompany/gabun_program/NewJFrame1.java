@@ -101,14 +101,69 @@ public class NewJFrame1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
 
-        String username = txt_username.getText();
-        char[] pass = txt_password.getPassword();
-        String userpassword = String.valueOf(pass);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    String username = txt_username.getText().trim();
+    String userpassword = String.valueOf(txt_password.getPassword());
 
+    if (username.isEmpty() || userpassword.isEmpty()) {
+
+        JOptionPane.showMessageDialog(this,
+                "Please enter username and password.");
+
+        return;
+    }
+
+    try {
+
+        // Check if username already exists
+        String checkQuery =
+                "SELECT * FROM Table1 WHERE user_name = ?";
+
+        pst = conn.prepareStatement(checkQuery);
+
+        pst.setString(1, username);
+
+        rs = pst.executeQuery();
+
+        if (rs.next()) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Username already exists!");
+
+            return;
+        }
+
+        // Insert new account
+        String insertQuery =
+                "INSERT INTO Table1 (user_name, user_password) VALUES (?, ?)";
+
+        pst = conn.prepareStatement(insertQuery);
+
+        pst.setString(1, username);
+        pst.setString(2, userpassword);
+
+        pst.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,
+                "Registration successful!");
+
+        txt_username.setText("");
+        txt_password.setText("");
+
+        // Open login form
+        NewJFrame login = new NewJFrame();
+        login.setVisible(true);
+
+        // Close register form
+        this.dispose();
+
+    } catch (SQLException e) {
+
+        JOptionPane.showMessageDialog(this,
+                "Registration Error: " + e.getMessage());
+    }
+}
     /**
      * @param args the command line arguments
      */
