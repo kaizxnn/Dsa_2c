@@ -75,39 +75,38 @@ public class RPSUI extends javax.swing.JFrame {
         int p1 = Integer.parseInt(txt1.getText());
         int p2 = Integer.parseInt(txt2.getText());
         
-        if (p1 == 1 && p2 == 1){
-            JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else if (p1 == 1 && p2 == 2){
-            JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else if (p1 == 1 && p2 == 3){
-           JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        else if (p1 == 2 && p2 == 1){
-            JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else if (p1 == 2 && p2 == 2){
-             JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else if (p1 == 2 && p2 == 3){
-        JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        else if (p1 == 3 && p2 == 1){
-            JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else if (p1 == 3 && p2 == 2){
-             JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else if (p1 == 3 && p2 == 3){
-            JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-            System.out.println("Invalid input");
-        }
-        
+    if (p1 == 1 && p2 == 1){
+    JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+else if (p1 == 1 && p2 == 2){
+    JOptionPane.showMessageDialog(rootPane,  "Player 2 Wins", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+else if (p1 == 1 && p2 == 3){
+    JOptionPane.showMessageDialog(rootPane,  "Player 1 Wins", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+
+else if (p1 == 2 && p2 == 1){
+    JOptionPane.showMessageDialog(rootPane,  "Player 1 Wins", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+else if (p1 == 2 && p2 == 2){
+    JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+else if (p1 == 2 && p2 == 3){
+    JOptionPane.showMessageDialog(rootPane,  "Player 2 Wins", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+
+else if (p1 == 3 && p2 == 1){
+    JOptionPane.showMessageDialog(rootPane,  "Player 2 Wins", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+else if (p1 == 3 && p2 == 2){
+    JOptionPane.showMessageDialog(rootPane,  "Player 1 Wins", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+else if (p1 == 3 && p2 == 3){
+    JOptionPane.showMessageDialog(rootPane,  "Draw", "title", JOptionPane.INFORMATION_MESSAGE);
+}
+else{
+    System.out.println("Invalid input");
+}
         // TODO add your handling code here:
     }//GEN-LAST:event_txt1ActionPerformed
 
