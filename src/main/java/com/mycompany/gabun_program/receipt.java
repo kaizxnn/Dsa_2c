@@ -205,7 +205,7 @@ private void btnDrinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 
     lblSelectedProduct.setText("Selected Product: None");
     lblPrice.setText("Price: ₱0");
-); // TODO add your handling code here:
+ // TODO add your handling code here:
 }//GEN-LAST:event_btnDrinksActionPerformed
 
 private void btnPandanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPandanActionPerformed
