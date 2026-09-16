@@ -30,8 +30,11 @@ txtQuantity.setText("0");
 txtCash.setText("0");
 
 // Products are not available until Snacks is selected
-btnPandan.setEnabled(false);
+btnPiatos1.setEnabled(false);
 btnNova.setEnabled(false);
+btnGulaman.setEnabled(false);
+btnPandan.setEnabled(false);
+
 }
 
 /**
@@ -172,27 +175,36 @@ pack();
 
 private void btnSnacksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSnacksActionPerformed
 
-lblSelectedCategory.setText("Selected Category: Snacks");
+   lblSelectedCategory.setText("Selected Category: Snacks");
 
-// Enable snack products
-btnPandan.setEnabled(true);
-btnNova.setEnabled(true);
+    btnPiatos1.setEnabled(true);
+    btnNova.setEnabled(true);
 
-// Reset product
-selectedProduct = "";
-price = 0;
+    btnGulaman.setEnabled(false);
+    btnPandan.setEnabled(false);
 
-lblSelectedProduct.setText("Selected Product: None");
-lblPrice.setText("Price: ₱0"); // TODO add your handling code here:
+    selectedProduct = "";
+    price = 0;
+
+    lblSelectedProduct.setText("Selected Product: None");
+    lblPrice.setText("Price: ₱0"); // TODO add your handling code here:
 }//GEN-LAST:event_btnSnacksActionPerformed
 
 private void btnDrinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDrinksActionPerformed
 
-lblSelectedCategory.setText("Selected Category: Drinks");
+ lblSelectedCategory.setText("Selected Category: Drinks");
 
-JOptionPane.showMessageDialog(
-this,
-"Drinks selected.\nDrinks are not available yet."
+    btnPiatos1.setEnabled(false);
+    btnNova.setEnabled(false);
+
+    btnGulaman.setEnabled(true);
+    btnPandan.setEnabled(true);
+
+    selectedProduct = "";
+    price = 0;
+
+    lblSelectedProduct.setText("Selected Product: None");
+    lblPrice.setText("Price: ₱0");
 ); // TODO add your handling code here:
 }//GEN-LAST:event_btnDrinksActionPerformed
 
