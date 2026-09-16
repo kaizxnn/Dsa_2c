@@ -198,11 +198,11 @@ this,
 
 private void btnPandanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPandanActionPerformed
 
-selectedProduct = "Piatos";
-price = 22;
+ selectedProduct = "Pandan";
+    price = 10;
 
-lblSelectedProduct.setText("Selected Product: Piatos");
-lblPrice.setText("Price: ₱22"); // TODO add your handling code here:
+    lblSelectedProduct.setText("Selected Product: Pandan");
+    lblPrice.setText("Price: ₱10");
 }//GEN-LAST:event_btnPandanActionPerformed
 
 private void btnNovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaActionPerformed
@@ -300,11 +300,20 @@ act();
 }//GEN-LAST:event_btnAgainActionPerformed
 
 private void btnPiatos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiatos1ActionPerformed
-// TODO add your handling code here:
+    selectedProduct = "Piatos";
+    price = 22;
+
+    lblSelectedProduct.setText("Selected Product: Piatos");
+    lblPrice.setText("Price: ₱22");
+
 }//GEN-LAST:event_btnPiatos1ActionPerformed
 
 private void btnGulamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGulamanActionPerformed
-// TODO add your handling code here:
+    selectedProduct = "Gulaman";
+    price = 15;
+
+    lblSelectedProduct.setText("Selected Product: Gulaman");
+    lblPrice.setText("Price: ₱15");// TODO add your handling code here:
 }//GEN-LAST:event_btnGulamanActionPerformed
 
 private void act() {
