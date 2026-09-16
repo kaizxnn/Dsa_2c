@@ -1,7 +1,14 @@
+/*
+* Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+* Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+*/
 package com.mycompany.gabun_program;
 
 import javax.swing.JOptionPane;
-
+/**
+*
+* @author CL2-PC
+*/
 public class receipt extends javax.swing.JFrame {
 
     private String selectedProduct = "";
@@ -25,8 +32,9 @@ public class receipt extends javax.swing.JFrame {
         btnPandan.setEnabled(false);
     }
 
-    @SuppressWarnings("unchecked")
-    private void initComponents() {
+  @SuppressWarnings("unchecked")
+// <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
@@ -232,8 +240,8 @@ public class receipt extends javax.swing.JFrame {
             new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1)
         );
 
-        pack();
-    }
+   pack();
+}// </editor-fold>//GEN-END:initComponents
 
     private void btnSnacksActionPerformed(java.awt.event.ActionEvent evt) {
 
