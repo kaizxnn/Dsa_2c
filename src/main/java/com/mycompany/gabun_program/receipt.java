@@ -30,7 +30,7 @@ private int price = 0;
     txtCash.setText("0");
 
     // Products are not available until Snacks is selected
-    btnPiatos.setEnabled(false);
+    btnPandan.setEnabled(false);
     btnNova.setEnabled(false);
     }
 
@@ -50,7 +50,7 @@ private int price = 0;
         lblCategory = new javax.swing.JLabel();
         lblProduct = new javax.swing.JLabel();
         btnNova = new javax.swing.JButton();
-        btnPiatos = new javax.swing.JButton();
+        btnPandan = new javax.swing.JButton();
         btnOrder = new javax.swing.JButton();
         lblQuantity = new javax.swing.JLabel();
         txtQuantity = new javax.swing.JTextField();
@@ -62,6 +62,8 @@ private int price = 0;
         lblSelectedCategory = new javax.swing.JLabel();
         lblSelectedProduct = new javax.swing.JLabel();
         lblPrice = new javax.swing.JLabel();
+        btnPiatos1 = new javax.swing.JButton();
+        btnGulaman = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -100,15 +102,15 @@ private int price = 0;
                 btnNovaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNova, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 121, -1));
+        getContentPane().add(btnNova, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 121, -1));
 
-        btnPiatos.setText("[1] PIATOS - ₱22");
-        btnPiatos.addActionListener(new java.awt.event.ActionListener() {
+        btnPandan.setText("[2] Pandan - ₱10");
+        btnPandan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPiatosActionPerformed(evt);
+                btnPandanActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPiatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        getContentPane().add(btnPandan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 130, -1));
 
         btnOrder.setText("Order");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -116,21 +118,21 @@ private int price = 0;
                 btnOrderActionPerformed(evt);
             }
         });
-        getContentPane().add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 100, 60));
+        getContentPane().add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 100, 60));
 
         lblQuantity.setText("Qauantity:");
-        getContentPane().add(lblQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
-        getContentPane().add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 100, -1));
+        getContentPane().add(lblQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, -1, -1));
+        getContentPane().add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 100, -1));
 
         lblCash.setText("Cash:");
-        getContentPane().add(lblCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
-        getContentPane().add(txtCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 130, -1));
+        getContentPane().add(lblCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
+        getContentPane().add(txtCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 130, -1));
 
         lblSubtotal.setText("Total: ₱0");
-        getContentPane().add(lblSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, -1, -1));
+        getContentPane().add(lblSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 610, -1, -1));
 
         lblChange.setText("Change: ₱0");
-        getContentPane().add(lblChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, -1));
+        getContentPane().add(lblChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 610, -1, -1));
 
         btnAgain.setText("Order Again?");
         btnAgain.addActionListener(new java.awt.event.ActionListener() {
@@ -138,16 +140,32 @@ private int price = 0;
                 btnAgainActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgain, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
+        getContentPane().add(btnAgain, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 640, -1, -1));
 
         lblSelectedCategory.setText("Selected Product: None");
         getContentPane().add(lblSelectedCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 112, -1, -1));
 
         lblSelectedProduct.setText("Selected Product: None");
-        getContentPane().add(lblSelectedProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        getContentPane().add(lblSelectedProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
         lblPrice.setText("Price: ₱0");
-        getContentPane().add(lblPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        getContentPane().add(lblPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+
+        btnPiatos1.setText("[1] PIATOS - ₱22");
+        btnPiatos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPiatos1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPiatos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+
+        btnGulaman.setText("[1] Gulaman - ₱15");
+        btnGulaman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGulamanActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnGulaman, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,7 +175,7 @@ private int price = 0;
     lblSelectedCategory.setText("Selected Category: Snacks");
 
     // Enable snack products
-    btnPiatos.setEnabled(true);
+    btnPandan.setEnabled(true);
     btnNova.setEnabled(true);
 
     // Reset product
@@ -178,14 +196,14 @@ private int price = 0;
     );      // TODO add your handling code here:
     }//GEN-LAST:event_btnDrinksActionPerformed
 
-    private void btnPiatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiatosActionPerformed
+    private void btnPandanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPandanActionPerformed
 
   selectedProduct = "Piatos";
     price = 22;
 
     lblSelectedProduct.setText("Selected Product: Piatos");
     lblPrice.setText("Price: ₱22");       // TODO add your handling code here:
-    }//GEN-LAST:event_btnPiatosActionPerformed
+    }//GEN-LAST:event_btnPandanActionPerformed
 
     private void btnNovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaActionPerformed
   selectedProduct = "Nova";
@@ -281,6 +299,14 @@ try {
     act();
     }//GEN-LAST:event_btnAgainActionPerformed
 
+    private void btnPiatos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiatos1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPiatos1ActionPerformed
+
+    private void btnGulamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGulamanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGulamanActionPerformed
+
    private void act() {
 
     int answer = JOptionPane.showConfirmDialog(
@@ -288,6 +314,7 @@ try {
         "Do you want to order again?",
         "Order Again",
         JOptionPane.YES_NO_OPTION
+            
     );
 
     if (answer == JOptionPane.YES_OPTION) {
@@ -305,7 +332,7 @@ try {
         txtQuantity.setText("0");
         txtCash.setText("0");
 
-        btnPiatos.setEnabled(false);
+        btnPandan.setEnabled(false);
         btnNova.setEnabled(false);
 
       
@@ -316,7 +343,9 @@ try {
         JOptionPane.showMessageDialog(
             this,
             "Thank you for ordering!"
+             
         );
+       System.exit(0);
     }
 }
 
@@ -359,9 +388,11 @@ try {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgain;
     private javax.swing.JButton btnDrinks;
+    private javax.swing.JButton btnGulaman;
     private javax.swing.JButton btnNova;
     private javax.swing.JButton btnOrder;
-    private javax.swing.JButton btnPiatos;
+    private javax.swing.JButton btnPandan;
+    private javax.swing.JButton btnPiatos1;
     private javax.swing.JButton btnSnacks;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCash;
