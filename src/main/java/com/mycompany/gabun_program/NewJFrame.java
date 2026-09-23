@@ -122,7 +122,14 @@ public class NewJFrame extends javax.swing.JFrame {
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null,"Login successfull");
+                        JOptionPane.showMessageDialog(this,
+            "Login successful!");
+
+    StudentFrame studentFrame = new StudentFrame();
+
+    studentFrame.setVisible(true);
+
+    this.dispose();
                         
                     }
                  } catch (SQLException e) {
