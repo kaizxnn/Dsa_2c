@@ -102,6 +102,9 @@ ResultSet rs;
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btn_save = new javax.swing.JButton();
+        btn_save1 = new javax.swing.JButton();
+        btn_add = new javax.swing.JButton();
 
         button1.setLabel("button1");
 
@@ -149,7 +152,6 @@ ResultSet rs;
         });
         getContentPane().add(btn_clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, -1, -1));
 
-        btn_read.setActionCommand("");
         btn_read.setLabel("READ");
         btn_read.setName("READ"); // NOI18N
         btn_read.addActionListener(new java.awt.event.ActionListener() {
@@ -186,6 +188,33 @@ ResultSet rs;
 
         jLabel5.setText("Student Name:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+
+        btn_save.setForeground(new java.awt.Color(0, 0, 0));
+        btn_save.setText("SAVE");
+        btn_save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_saveActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+
+        btn_save1.setForeground(new java.awt.Color(0, 0, 0));
+        btn_save1.setText("SAVE");
+        btn_save1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_save1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+
+        btn_add.setForeground(new java.awt.Color(0, 0, 0));
+        btn_add.setText("ADD");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -283,6 +312,121 @@ String idText = txt_id.getText().trim();
     }
     }//GEN-LAST:event_btn_deleteActionPerformed
 
+    private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
+        // TODO add your handling code here:
+        String idText = txt_id.getText().trim();
+    String name = txt_name.getText().trim();
+    String course = txt_course.getText().trim();
+    String ageText = txt_age.getText().trim();
+
+    if (idText.isEmpty() || name.isEmpty() || course.isEmpty() || ageText.isEmpty()) {
+        JOptionPane.showMessageDialog(this,
+                "Please fill in all fields.");
+        return;
+    }
+
+    try {
+        int id = Integer.parseInt(idText);
+        int age = Integer.parseInt(ageText);
+
+        String sql = "UPDATE Students SET StudentName = ?, Course = ?, Age = ? WHERE ID = ?";
+
+        pst = conn.prepareStatement(sql);
+
+        pst.setString(1, name);
+        pst.setString(2, course);
+        pst.setInt(3, age);
+        pst.setInt(4, id);
+
+        int result = pst.executeUpdate();
+
+        if (result > 0) {
+            JOptionPane.showMessageDialog(this,
+                    "Record updated successfully!");
+
+            readStudents();
+            clearFields();
+
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Record not found.");
+        }
+
+    } catch (NumberFormatException e) {
+
+        JOptionPane.showMessageDialog(this,
+                "ID and Age must be numbers.");
+
+    } catch (SQLException e) {
+
+        JOptionPane.showMessageDialog(this,
+                "UPDATE Error: " + e.getMessage());
+    }
+    }//GEN-LAST:event_btn_saveActionPerformed
+
+    private void saveNewStudent() {
+
+    String name = txt_name.getText().trim();
+    String course = txt_course.getText().trim();
+    String ageText = txt_age.getText().trim();
+
+    if (name.isEmpty() || course.isEmpty() || ageText.isEmpty()) {
+        JOptionPane.showMessageDialog(this,
+                "Please fill in all fields.");
+        return;
+    }
+
+    try {
+
+        int age = Integer.parseInt(ageText);
+
+        String sql = "INSERT INTO Students (StudentName, Course, Age) "
+                   + "VALUES (?, ?, ?)";
+
+        pst = conn.prepareStatement(sql);
+
+        pst.setString(1, name);
+        pst.setString(2, course);
+        pst.setInt(3, age);
+
+        int result = pst.executeUpdate();
+
+        if (result > 0) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Student added successfully!");
+
+            readStudents();
+            clearFields();
+        }
+
+    } catch (NumberFormatException e) {
+
+        JOptionPane.showMessageDialog(this,
+                "Age must be a number.");
+
+    } catch (SQLException e) {
+
+        JOptionPane.showMessageDialog(this,
+                "ADD Error: " + e.getMessage());
+    }
+}
+
+    private void btn_save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_save1ActionPerformed
+
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+
+    AddStudentDialog dialog = new AddStudentDialog();
+
+    dialog.setLocationRelativeTo(this);
+    dialog.setVisible(true);
+
+    
+    
+    }//GEN-LAST:event_btn_addActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -319,9 +463,12 @@ String idText = txt_id.getText().trim();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_add;
     private java.awt.Button btn_clear;
     private java.awt.Button btn_delete;
     private java.awt.Button btn_read;
+    private javax.swing.JButton btn_save;
+    private javax.swing.JButton btn_save1;
     private java.awt.Button btn_update;
     private java.awt.Button button1;
     private javax.swing.JLabel jLabel2;
